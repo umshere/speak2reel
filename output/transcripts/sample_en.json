@@ -1,0 +1,22 @@
+{
+  "language": "en",
+  "text": "Hello, this is a test podcast. We will talk about technology.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.5,
+      "end": 3.0,
+      "text": " Hello, this is a test podcast.",
+      "tokens": [50364, 20920, 11, 341, 374, 257, 4639, 18495, 13, 50514]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.5,
+      "end": 5.5,
+      "text": " We will talk about technology.",
+      "tokens": [50514, 506, 486, 1209, 546, 4204, 13, 50614]
+    }
+  ]
+}
