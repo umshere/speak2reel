@@ -24,24 +24,24 @@ The pipeline consists of several modules that process data sequentially:
 ```mermaid
 graph TD
     A[Input: YouTube URL] --> B[Module 1: Downloader]
-    B -- Audio Path & Max Duration --> C[downloaded_audio.mp3]
+    B --> C[downloaded_audio.mp3]
     C --> D[Module 2a: Transcriber]
-    D -- Audio Path, FastText Model Path --> E[original_transcript.json (Segments, Timestamps, Language)]
-    E --> F{Need Translation for Subtitles/Prompts?}
-    F -- Yes, Non-English & 'en'/'both' subs --> G[Module 2b: Translator]
-    G -- Segments to Translate, Target Lang 'en' --> H[english_translation.json]
-    F -- No --> I[Module 3: Scene Splitter & Prompt Builder]
+    D --> E[original_transcript.json]
+    E --> F{Need Translation?}
+    F -->|Yes| G[Module 2b: Translator]
+    G --> H[english_translation.json]
+    F -->|No| I[Module 3: Scene Splitter]
     E --> I
-    I -- Transcript Data --> J[Scene Data (Text Chunks, Timings, English Image Prompts)]
+    I --> J[Scene Data with Prompts]
     J --> K[Module 4: Image Generator]
-    K -- English Image Prompts, Output Dir, Scene Index --> L[Generated Images (scene_X.png)]
+    K --> L[Generated Images]
     C --> M[Module 5: Video Composer]
     L --> M
     J --> M
     E --> M
-    H ==> M
-    M -- Audio, Images, Scene Data, Subtitle Config --> N[final_reel.mp4]
-    M -- Transcript Data (orig/en) --> O[reel_lang.srt]
+    H --> M
+    M --> N[final_reel.mp4]
+    M --> O[subtitle files]
 ```
 
 ## Setup Instructions
