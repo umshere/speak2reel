@@ -23,25 +23,25 @@ The pipeline consists of several modules that process data sequentially:
 
 ```mermaid
 graph TD
-    A[Input: YouTube URL] --> B(Module 1: Downloader);
-    B -- Audio Path & Max Duration --> C{{downloaded_audio.mp3}};
-    C --> D(Module 2a: Transcriber);
-    D -- Audio Path, FastText Model Path --> E{{original_transcript.json (Segments, Timestamps, Language)}};
-    E --> F{Need Translation for Subtitles/Prompts?};
-    F -- Yes, Non-English & 'en'/'both' subs --> G(Module 2b: Translator);
-    G -- Segments to Translate, Target Lang 'en' --> H{{english_translation.json}};
-    F -- No --> I(Module 3: Scene Splitter & Prompt Builder);
-    E --> I; % Original transcript for scene text
-    I -- Transcript Data --> J{{Scene Data (Text Chunks, Timings, English Image Prompts)}};
-    J --> K(Module 4: Image Generator);
-    K -- English Image Prompts, Output Dir, Scene Index --> L{{Generated Images (scene_X.png)}};
-    C --> M(Module 5: Video Composer);
-    L --> M;
-    J --> M; % Scene timings and text for reference
-    E --> M; % For 'orig' subtitles
-    H ==> M; % For 'en' subtitles (double arrow for optional flow)
-    M -- Audio, Images, Scene Data, Subtitle Config --> N{{final_reel.mp4}};
-    M -- Transcript Data (orig/en) --> O{{reel_lang.srt}};
+    A[Input: YouTube URL] --> B[Module 1: Downloader]
+    B -- Audio Path & Max Duration --> C[downloaded_audio.mp3]
+    C --> D[Module 2a: Transcriber]
+    D -- Audio Path, FastText Model Path --> E[original_transcript.json (Segments, Timestamps, Language)]
+    E --> F{Need Translation for Subtitles/Prompts?}
+    F -- Yes, Non-English & 'en'/'both' subs --> G[Module 2b: Translator]
+    G -- Segments to Translate, Target Lang 'en' --> H[english_translation.json]
+    F -- No --> I[Module 3: Scene Splitter & Prompt Builder]
+    E --> I
+    I -- Transcript Data --> J[Scene Data (Text Chunks, Timings, English Image Prompts)]
+    J --> K[Module 4: Image Generator]
+    K -- English Image Prompts, Output Dir, Scene Index --> L[Generated Images (scene_X.png)]
+    C --> M[Module 5: Video Composer]
+    L --> M
+    J --> M
+    E --> M
+    H ==> M
+    M -- Audio, Images, Scene Data, Subtitle Config --> N[final_reel.mp4]
+    M -- Transcript Data (orig/en) --> O[reel_lang.srt]
 ```
 
 ## Setup Instructions
@@ -159,7 +159,7 @@ Running this pipeline involves costs from third-party APIs:
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
+````
 
 ## Web Application (In Development)
 
