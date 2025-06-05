@@ -45,7 +45,7 @@ The choice depends on budget, scalability needs, and team expertise. Options inc
     *   **`ALLOWED_HOSTS`**: Set to your domain(s).
     *   `DATABASE_URL`.
     *   `CELERY_BROKER_URL`, `CELERY_RESULT_BACKEND` (pointing to production Redis/RabbitMQ).
-    *   `OPENAI_API_KEY`, `STABILITY_API_KEY`.
+    *   `OPENAI_API_KEY`.
     *   `FASTTEXT_MODEL_PATH` (if used by pipeline in production).
     *   Use a `.env` file for local development, but actual environment variables on the server or platform's config vars.
 

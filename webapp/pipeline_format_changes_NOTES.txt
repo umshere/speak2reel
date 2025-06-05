@@ -3,8 +3,8 @@
 # - Pass this video_format to image_generator and video_composer modules.
 
 # Conceptual Changes for podcast_to_reels/image_generator.py:
-# - The function calling Stability AI should accept a video_format/aspect_ratio parameter.
-# - Map this to Stability AI's aspect_ratio values (e.g., '9:16', '16:9', '1:1').
+# - The function calling OpenAI DALL-E/GPT-4o should accept a video_format/aspect_ratio parameter.
+# - Map this to OpenAI's size values (e.g., '1024x1792' for 9:16, '1792x1024' for 16:9, '1024x1024' for 1:1).
 
 # Conceptual Changes for podcast_to_reels/video_composer.py:
 # - compose_video function to accept video_format/target_resolution.

@@ -58,7 +58,6 @@ jobs:
           # These will override any .env file if loaded by the script.
           # Note: pytest.ini env vars are typically for pytest context, not general script runs.
           OPENAI_API_KEY: "ci_dummy_openai_key"
-          STABILITY_API_KEY: "ci_dummy_stability_key"
           FASTTEXT_MODEL_PATH: "ci_dummy_lid.176.bin" # Ensure this path won't be written to
         run: |
           echo "Running smoke test for run_pipeline.py..."
@@ -70,7 +69,7 @@ jobs:
             --subtitles none \
             --output_dir "ci_output" \
             --fasttext_model_path "ci_dummy_lid.176.bin" \
-            --skip_image_generation # Skip actual image generation to avoid Stability API calls in CI
+            --skip_image_generation # Skip actual image generation to avoid OpenAI API calls in CI
             # Consider adding --skip_video_composition if FFmpeg is heavy/problematic in CI runners
             # For now, let it try to compose with (likely) missing images if image gen was truly skipped.
             # If image gen was not skipped but failed due_to_keys, then images_dir will be empty.

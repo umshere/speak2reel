@@ -10,7 +10,7 @@ This project provides an automated pipeline to convert segments from podcasts or
     *   Detects audio language using Whisper, with fallbacks to FastText and Langdetect.
     *   Optionally translates non-English transcripts to English for image prompt generation and subtitles.
 *   **AI Scene & Image Prompt Generation**: Splits transcripts into logical scenes and uses OpenAI GPT-4o-mini to generate vivid image prompts for each scene.
-*   **AI Image Generation**: Creates images for scenes using Stability AI SD3.
+*   **AI Image Generation**: Creates images for scenes using OpenAI's image generation models (DALL-E 3, with GPT-4o support when available).
 *   **Automated Video Composition**: Combines audio, generated images, and subtitles into a vertical video reel (MP4 format).
 *   **Subtitle Generation**:
     *   Supports subtitles in the original language, translated English, or both.
@@ -71,8 +71,7 @@ graph TD
         cp .env.example .env
         ```
     *   Edit the `.env` file and fill in your API keys:
-        *   `OPENAI_API_KEY`: Your OpenAI API key (for Whisper, GPT).
-        *   `STABILITY_API_KEY`: Your Stability AI API key (for image generation).
+        *   `OPENAI_API_KEY`: Your OpenAI API key (for Whisper, GPT, and image generation).
     *   **FastText Model (Optional but Recommended for non-English audio)**:
         *   The pipeline uses FastText for language detection fallback. The default expected model file is `lid.176.bin`.
         *   Download the model from the [FastText website (language identification section)](https://fasttext.cc/docs/en/language-identification.html). Look for the "Binary model" link for `lid.176.bin`.
@@ -140,10 +139,9 @@ Running this pipeline involves costs from third-party APIs:
 *   **OpenAI API**:
     *   Whisper for transcription (priced per minute of audio).
     *   GPT-4o or similar for translation and image prompt generation (priced per token).
-*   **Stability AI API**:
-    *   SD3 or similar for image generation (priced per image).
+    *   DALL-E 3 or GPT-4o for image generation (priced per image).
 
-**Rough Estimate**: For a 60-second reel involving transcription, translation of ~500 words, generation of ~5 image prompts, and 5 images, the cost might be in the range of **US$0.10 - US$0.30**. This is highly dependent on the exact length of text processed by GPT models and the number of images generated. The project aims to stay below US$0.30 per demo reel as per the initial brief. Always check the latest pricing for OpenAI and Stability AI.
+**Rough Estimate**: For a 60-second reel involving transcription, translation of ~500 words, generation of ~5 image prompts, and 5 images, the cost might be in the range of **US$0.10 - US$0.30**. This is highly dependent on the exact length of text processed by GPT models and the number of images generated. The project aims to stay below US$0.30 per demo reel as per the initial brief. Always check the latest pricing for OpenAI APIs.
 
 ## Troubleshooting/FAQ
 
