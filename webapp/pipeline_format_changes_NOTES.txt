@@ -1,0 +1,12 @@
+# Conceptual Changes for podcast_to_reels/scripts/run_pipeline.py:
+# - Add argparse argument: --video_format (choices: ['9:16', '16:9', '1:1'], default '9:16')
+# - Pass this video_format to image_generator and video_composer modules.
+
+# Conceptual Changes for podcast_to_reels/image_generator.py:
+# - The function calling Stability AI should accept a video_format/aspect_ratio parameter.
+# - Map this to Stability AI's aspect_ratio values (e.g., '9:16', '16:9', '1:1').
+
+# Conceptual Changes for podcast_to_reels/video_composer.py:
+# - compose_video function to accept video_format/target_resolution.
+# - Set MoviePy canvas size (e.g., 1080x1920 for 9:16, 1920x1080 for 16:9, 1080x1080 for 1:1).
+# - Adapt image resizing/cropping logic to fit the target aspect ratio appropriately.

@@ -1,0 +1,30 @@
+{
+  "language": "es",
+  "text": "Hola, esto es un podcast de prueba. Hablaremos de tecnología.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.5,
+      "end": 3.0,
+      "text": " Hola, esto es un podcast de prueba.",
+      "tokens": [50364, 2 Hola, 1 esto, 1 es, 1 un, 1 podcast, 1 de, 1 prueba, 50514],
+      "temperature": 0.0,
+      "avg_logprob": -0.5,
+      "compression_ratio": 1.0,
+      "no_speech_prob": 0.1
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.5,
+      "end": 5.5,
+      "text": " Hablaremos de tecnología.",
+      "tokens": [50514, 2 Hablaremos, 1 de, 1 tecnología, 50614],
+      "temperature": 0.0,
+      "avg_logprob": -0.5,
+      "compression_ratio": 1.0,
+      "no_speech_prob": 0.1
+    }
+  ]
+}

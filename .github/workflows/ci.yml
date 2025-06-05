@@ -1,0 +1,81 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true # Optional: creates .venv in project root
+
+      - name: Install dependencies
+        run: poetry install --no-root --with dev
+
+      - name: Linting with Ruff
+        run: poetry run ruff check .
+
+      - name: Run tests with Pytest and Coverage
+        run: |
+          poetry run pytest \
+            --cov=podcast_to_reels \
+            --cov-report=xml \
+            --cov-report=term-missing \
+            --cov-fail-under=80
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-xml
+          path: coverage.xml
+          if-no-files-found: error # Optional: fail if coverage.xml is not found
+
+      - name: Run pipeline script (smoke test)
+        # This smoke test runs the main pipeline script with dummy parameters.
+        # In a real CI environment, API calls should be mocked or use test/dummy keys.
+        # The script might fail at API call stages if real keys are expected but not provided,
+        # or if dummy keys (from pytest.ini or env) cause auth errors.
+        # The main purpose here is to check if the script starts, parses args, and basic file ops work.
+        # A more robust smoke test would involve modifying run_pipeline.py to use mocks in CI.
+        env:
+          # Set dummy keys for the pipeline script run if it attempts to use them
+          # These will override any .env file if loaded by the script.
+          # Note: pytest.ini env vars are typically for pytest context, not general script runs.
+          OPENAI_API_KEY: "ci_dummy_openai_key"
+          STABILITY_API_KEY: "ci_dummy_stability_key"
+          FASTTEXT_MODEL_PATH: "ci_dummy_lid.176.bin" # Ensure this path won't be written to
+        run: |
+          echo "Running smoke test for run_pipeline.py..."
+          # The FastText model won't be found, so transcription's lang detection might be limited.
+          # This is acceptable for a smoke test focusing on script execution.
+          poetry run python scripts/run_pipeline.py \
+            --url "https://www.youtube.com/watch?v=dQw4w9WgXcQ" \
+            --duration 5 \
+            --subtitles none \
+            --output_dir "ci_output" \
+            --fasttext_model_path "ci_dummy_lid.176.bin" \
+            --skip_image_generation # Skip actual image generation to avoid Stability API calls in CI
+            # Consider adding --skip_video_composition if FFmpeg is heavy/problematic in CI runners
+            # For now, let it try to compose with (likely) missing images if image gen was truly skipped.
+            # If image gen was not skipped but failed due_to_keys, then images_dir will be empty.
+
+          echo "Smoke test finished. Checking for output directory..."
+          ls -R ci_output
+          # A more robust check would verify specific file creation, but this is a basic smoke test.
+```

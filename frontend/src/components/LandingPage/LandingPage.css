@@ -1,0 +1,617 @@
+.landing-page {
+  padding: 0 20px; /* Add some padding */
+}
+
+.hero-section {
+  background-color: #f0f8ff; /* Light alice blue */
+  padding: 40px 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+.hero-section h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 0.5em;
+}
+
+.hero-section p {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 1.5em;
+}
+
+.cta-button {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+.recent-transformations, .interactive-carousel-section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f9f9f9; /* Light grey for sections */
+  border-radius: 8px;
+}
+
+.recent-transformations h2, .interactive-carousel-section h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.transformations-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.transformation-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  width: calc(33.333% - 40px); /* Adjust for gap, for 3 items per row */
+  min-width: 250px; /* Minimum width for smaller screens / fewer items */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.transformation-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.transformation-item p {
+  font-size: 1em;
+  color: #444;
+}
+
+.carousel-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.carousel-item {
+  display: flex;
+  justify-content: space-around; /* Puts before and after side-by-side */
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 10px; /* Space between before and after images */
+}
+
+.carousel-image-container {
+  text-align: center;
+}
+
+.carousel-image {
+  max-width: 100%; /* Make images responsive within their container */
+  width: 300px; /* Fixed width for consistency */
+  height: auto;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.image-label {
+  font-weight: bold;
+  margin-top: 5px;
+  color: #555;
+}
+
+.carousel-caption {
+  font-size: 1.1em;
+  font-style: italic;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.carousel-controls button {
+  background-color: #6c757d;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-controls button:hover:not(:disabled) {
+  background-color: #545b62;
+}
+
+.carousel-controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.landing-footer {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #343a40;
+  color: white;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Basic responsiveness */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2em;
+  }
+  .transformation-item {
+    width: calc(50% - 40px); /* 2 items per row */
+  }
+  .carousel-item {
+    flex-direction: column; /* Stack before/after on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .transformation-item {
+    width: calc(100% - 40px); /* 1 item per row */
+  }
+}
+
+
+
+/* Styles for Submission Form */
+.submission-form {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #ffffff; /* White background for the form */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.url-input,
+.subtitles-select,
+.duration-input { /* Assuming duration input might be added later */
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Important for width 100% */
+  font-size: 1em;
+}
+
+.subtitles-select {
+  appearance: none; /* For custom styling if desired */
+  background-color: #fff; /* Ensure it's not transparent */
+}
+
+.submission-form .cta-button { /* Re-style button if needed or use existing */
+  width: 100%;
+  margin-top: 10px;
+}
+
+.loading-indicator {
+  margin-top: 15px;
+  font-style: italic;
+  color: #007bff;
+}
+
+.api-feedback {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.api-feedback.success {
+  background-color: #d4edda; /* Light green */
+  color: #155724; /* Dark green */
+  border: 1px solid #c3e6cb;
+}
+
+.api-feedback.error {
+  background-color: #f8d7da; /* Light red */
+  color: #721c24; /* Dark red */
+  border: 1px solid #f5c6cb;
+}
+
+.api-feedback pre {
+  white-space: pre-wrap; /* Wrap long error messages */
+  word-break: break-all;
+  background-color: #fefefe;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+
+/* Styles for Job Status Section */
+.job-status-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #e9ecef; /* Light grey background */
+  border-radius: 8px;
+}
+
+.status-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto 20px auto;
+}
+
+.job-id-input {
+  flex-grow: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.cta-button.secondary {
+  background-color: #6c757d; /* Secondary button color */
+}
+.cta-button.secondary:hover {
+  background-color: #5a6268;
+}
+
+.api-feedback.info {
+  background-color: #e2e3e5; /* Lighter grey for info */
+  color: #383d41;
+  border: 1px solid #d6d8db;
+}
+
+.api-feedback h3 {
+  margin-top: 0;
+  color: #004085; /* Dark blue for heading */
+}
+
+.status-notification {
+  font-weight: bold;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  text-align: center;
+}
+.status-notification.success {
+  background-color: #28a745; /* Green */
+  color: white;
+}
+.status-notification.error {
+  background-color: #dc3545; /* Red */
+  color: white;
+}
+.link-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+}
+
+
+/* Styles for Scene Preview Section */
+.job-details-container { /* For overall job status display area */
+  text-align: left;
+}
+.scenes-preview-section {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #ccc;
+}
+.scenes-preview-section h4 {
+  font-size: 1.4em;
+  color: #333;
+  margin-bottom: 15px;
+}
+.scenes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 15px;
+}
+.scene-preview-item {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.scene-preview-item h4 {
+  font-size: 1.1em;
+  color: #0056b3; /* Darker blue for scene title */
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.scene-preview-item p {
+  font-size: 0.95em;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.scene-preview-item p strong {
+  color: #555;
+}
+.scene-preview-item em { /* Style for the prompt */
+  color: #777;
+  display: block; /* Prompts on new line */
+  margin-top: 5px;
+}
+.image-placeholder {
+  height: 150px; /* Placeholder height */
+  background-color: #e0e0e0;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-style: italic;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+
+/* Styles for Scene Preview Section */
+.job-details-container { /* For overall job status display area */
+  text-align: left;
+}
+.scenes-preview-section {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #ccc;
+}
+.scenes-preview-section h4 {
+  font-size: 1.4em;
+  color: #333;
+  margin-bottom: 15px;
+}
+.scenes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 15px;
+}
+.scene-preview-item {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.scene-preview-item h4 {
+  font-size: 1.1em;
+  color: #0056b3; /* Darker blue for scene title */
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.scene-preview-item p {
+  font-size: 0.95em;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.scene-preview-item p strong {
+  color: #555;
+}
+.scene-preview-item em { /* Style for the prompt */
+  color: #777;
+  display: block; /* Prompts on new line */
+  margin-top: 5px;
+}
+.image-placeholder {
+  height: 150px; /* Placeholder height */
+  background-color: #e0e0e0;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-style: italic;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+
+/* Styles for Scene Preview Section - Appended in Step 10 */
+.job-details-container { /* For overall job status display area */
+  text-align: left;
+}
+.scenes-preview-section {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #ccc;
+}
+.scenes-preview-section h4 {
+  font-size: 1.4em;
+  color: #333;
+  margin-bottom: 15px;
+}
+.scenes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 15px;
+}
+.scene-preview-item {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.scene-preview-item h4 {
+  font-size: 1.1em;
+  color: #0056b3; /* Darker blue for scene title */
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.scene-preview-item p {
+  font-size: 0.95em;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.scene-preview-item p strong {
+  color: #555;
+}
+.scene-preview-item em { /* Style for the prompt */
+  color: #777;
+  display: block; /* Prompts on new line */
+  margin-top: 5px;
+}
+.image-placeholder {
+  height: 150px; /* Placeholder height */
+  background-color: #e0e0e0;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-style: italic;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+/* Ensure textarea in scene preview is visible */
+.scene-preview-item textarea {
+    border: 1px solid #ccc; /* Default border */
+    border-radius: 4px;
+    padding: 8px;
+    font-family: inherit;
+    font-size: 0.9em;
+    width: 95%; /* Or specific width */
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+.scene-preview-item textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    outline: none;
+}
+
+
+/* Toast Notification Styles */
+.toast-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 250px;
+  max-width: 400px;
+  color: #fff;
+  /* Animation properties could be added here */
+}
+.toast-notification.toast-info { background-color: #17a2b8; } /* Teal */
+.toast-notification.toast-success { background-color: #28a745; } /* Green */
+.toast-notification.toast-warning { background-color: #ffc107; color: #333; } /* Yellow */
+.toast-notification.toast-error { background-color: #dc3545; } /* Red */
+
+.toast-close-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.5em;
+  line-height: 1;
+  margin-left: 15px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.toast-close-btn:hover {
+  opacity: 1;
+}
+
+/* Share Buttons Section Styles */
+.share-buttons-section {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #ccc;
+}
+.share-buttons-section h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+.share-button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #007bff;
+}
+.share-button:hover {
+  background-color: #0056b3;
+}
+.share-button.disabled-feature {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+.share-button.disabled-feature:hover {
+  background-color: #5a6268;
+}
+
+
+
+/* Styles for Enhanced Styling Textareas */
+.customization-section { /* Parent container for all settings */
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+}
+.customization-section h4 { /* Heading for the whole customization area */
+  margin-bottom: 20px; /* Increased margin for overall section heading */
+  font-size: 1.6em; /* Larger heading for this section */
+  color: #222;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+.style-textarea {
+  width: 100%;
+  padding: 8px 10px; /* Adjusted padding */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 0.95em;
+  margin-top: 4px; /* Reduced top margin from label */
+  min-height: 60px; /* Ensure decent height for a few keywords */
+}
+.scenes-preview-section h5 { /* For the 'Scene Prompts (Editable)' sub-heading */
+    font-size: 1.3em; /* Adjusted size */
+    color: #333;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+/* Ensure form groups within customization section have consistent spacing */
+.customization-section .form-group {
+    margin-bottom: 18px;
+}
+.customization-section .form-group label {
+    font-weight: 600; /* Slightly bolder labels */
+    font-size: 1em;
+}

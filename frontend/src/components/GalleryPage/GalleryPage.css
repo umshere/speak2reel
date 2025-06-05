@@ -1,0 +1,106 @@
+.gallery-page {
+  padding: 20px;
+  max-width: 1300px; /* Wider for gallery view */
+  margin: 0 auto;
+}
+
+.gallery-page h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 2.2em;
+}
+
+.gallery-intro {
+  text-align: center;
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.gallery-loading, .gallery-error {
+  text-align: center;
+  font-size: 1.2em;
+  padding: 20px;
+}
+
+.gallery-empty {
+  text-align: center;
+  font-size: 1.1em;
+  color: #777;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.gallery-grid {
+  display: grid;
+  /* Adjust minmax for desired item size, e.g., 320px for ~3-4 items per row on larger screens */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px; /* Increased gap */
+}
+
+.gallery-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  overflow: hidden; /* Ensure children don't overflow rounded corners */
+}
+
+.gallery-item-user {
+  font-size: 0.9em;
+  color: #777;
+  padding: 10px 15px 0px 15px; /* Add padding */
+  margin-bottom: 5px;
+}
+/* Removed h4 for title to simplify, as per JS code */
+
+.gallery-video {
+  width: 100%; /* Make video responsive */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 400px; /* Optional: constrain video height */
+  background-color: #000;
+  border-bottom: 1px solid #eee; /* Separator before details */
+}
+
+.video-placeholder {
+  width: 100%;
+  height: 180px; /* Adjust height as needed */
+  background-color: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  font-style: italic;
+  border-bottom: 1px solid #ddd;
+}
+
+.gallery-item-details {
+  padding: 15px;
+}
+
+.gallery-item-details p {
+  font-size: 0.95em;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.gallery-item-details p strong {
+  color: #000;
+}
+
+.gallery-item-details a {
+  color: #007bff;
+  text-decoration: none;
+}
+.gallery-item-details a:hover {
+  text-decoration: underline;
+}
+
+.gallery-item-details small {
+  font-size: 0.8em;
+  color: #777;
+}

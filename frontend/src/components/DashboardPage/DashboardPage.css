@@ -1,0 +1,102 @@
+.dashboard-page {
+  padding: 20px;
+  max-width: 1200px; /* Increased max-width for wider table */
+  margin: 0 auto;
+}
+.dashboard-page h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+.dashboard-loading, .dashboard-error {
+  text-align: center;
+  font-size: 1.2em;
+  padding: 20px;
+}
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.projects-table th, .projects-table td {
+  border: 1px solid #ddd;
+  padding: 10px 12px; /* Adjusted padding */
+  text-align: left;
+  vertical-align: middle;
+  font-size: 0.95em; /* Slightly smaller font for more data */
+}
+.projects-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  color: #333;
+}
+.projects-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.projects-table tbody tr:hover {
+  background-color: #f0f0f0;
+}
+.action-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 10px; /* Smaller buttons for table */
+  margin-right: 5px;
+  margin-bottom: 5px; /* For wrapping */
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.85em; /* Smaller font for buttons */
+}
+.action-button:hover {
+  background-color: #0056b3;
+}
+.action-button.download-button {
+  background-color: #28a745;
+}
+.action-button.download-button:hover {
+  background-color: #1e7e34;
+}
+.action-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.status-badge {
+  padding: 4px 7px; /* Slightly smaller badge */
+  border-radius: 4px;
+  color: white;
+  font-size: 0.8em; /* Smaller font for badge */
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap; /* Prevent status from wrapping */
+}
+/* Ensure status_awaiting_user_input class is used */
+.status-badge.status-pending,
+.status-badge.status-awaiting_user_input, /* CSS class for status */
+.status-badge.status-splitting_scenes {
+  background-color: #ffc107; color: #333;
+}
+.status-badge.status-processing,
+.status-badge.status-generating_images,
+.status-badge.status-composing_video {
+  background-color: #17a2b8;
+}
+.status-badge.status-completed {
+  background-color: #28a745;
+}
+.status-badge.status-failed {
+  background-color: #dc3545;
+}
+
+/* Link button style from LandingPage if needed */
+.link-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit; /* Or specific size */
+}

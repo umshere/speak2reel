@@ -1,0 +1,5 @@
+
+from .views import UserVideoProjectListView # Add this import if not covered by wildcard
+
+# Add this to urlpatterns list:
+# path('user/projects/', UserVideoProjectListView.as_view(), name='user_video_project_list'),

@@ -1,0 +1,8 @@
+
+**Running Celery (Development):**
+1. Start Redis server: `redis-server` (or as per your Redis installation)
+2. Start Celery worker from the 'webapp' directory (where manage.py is):
+   `celery -A webapp_project worker -l info`
+   (Ensure your Python environment has Django and Celery installed)
+   For Windows, you might need: `celery -A webapp_project worker -l info -P eventlet`
+   (and install eventlet: `pip install eventlet`)
