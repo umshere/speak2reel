@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Register</title></head>
+<body>
+  <h2>Register</h2>
+  {% if messages %}
+    {% for message in messages %}
+      <p style="color: {% if message.tags == \"error\" %}red{% else %}green{% endif %};">{{ message }}</p>
+    {% endfor %}
+  {% endif %}
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+  </form>
+  <p><a href="{% url \"login\" %}">Already have an account? Login</a></p>
+</body>
+</html>

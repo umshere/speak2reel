@@ -1,0 +1,10 @@
+# Add 'scenes_data = models.JSONField(blank=True, null=True)' to VideoProject
+# Add 'scenes_data = models.JSONField(blank=True, null=True)' to VideoProject
+# Add 'scenes_data = models.JSONField(blank=True, null=True)' to VideoProject
+# Add 'AWAITING_USER_INPUT' to STATUS_CHOICES in VideoProject model
+# Add 'scenes_data = models.JSONField(blank=True, null=True)' to VideoProject
+# Add 'AWAITING_USER_INPUT' to STATUS_CHOICES in VideoProject model
+# Added image_style_preference field and IMAGE_STYLE_CHOICES to VideoProject
+# Added is_public_in_gallery to VideoProject model
+# Added video_format_preference field and VIDEO_FORMAT_CHOICES to VideoProject
+# Added positive_style_keywords, negative_style_keywords, artist_influences to VideoProject

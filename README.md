@@ -160,3 +160,8 @@ Running this pipeline involves costs from third-party APIs:
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 ```
+
+## Web Application (In Development)
+
+A web application interface for this pipeline is being developed in the `webapp/` (backend) and `frontend/` (frontend) directories.
+It is based on Django (Python) and React (JavaScript).

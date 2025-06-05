@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.App-header { /* If you want a distinct header later */
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+
+/* Basic Navigation Styles */
+.main-nav {
+  background-color: #333;
+  padding: 10px 20px;
+  text-align: left; /* Align nav items to the left */
+  margin-bottom: 20px;
+}
+.main-nav button {
+  background-color: #555;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.main-nav button:hover {
+  background-color: #007bff;
+}

@@ -1,0 +1,9 @@
+# Placeholder for Web Application CI Workflow (Django & React)
+# This would include steps to:
+# 1. Setup Python & Node.js
+# 2. Install backend dependencies (poetry or pip)
+# 3. Install frontend dependencies (npm or yarn)
+# 4. Run backend linters & tests
+# 5. Run frontend linters & tests
+# 6. Build frontend
+# (Optionally) Build Docker containers, deploy, etc.

@@ -1,0 +1,25 @@
+# Ensure 'users.apps.UsersConfig' is in INSTALLED_APPS in settings.py
+# Also, add AUTH_USER_MODEL = 'users.CustomUser' if you create a custom user model
+# Ensure 'users.apps.UsersConfig' is in INSTALLED_APPS in settings.py
+# Also, add AUTH_USER_MODEL = 'users.CustomUser' if you create a custom user model
+# Ensure 'rest_framework' and 'webapp.api.apps.ApiConfig' (if you create an apps.py for api) are in INSTALLED_APPS
+# Ensure 'rest_framework' and 'webapp.api.apps.ApiConfig' (if you create an apps.py for api) are in INSTALLED_APPS
+
+# Celery Configuration (settings.py)
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Example for local Redis
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0' # Example for local Redis
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'UTC' # Or your project's timezone
+# For more robust task result storage with Django, consider django-celery-results
+# CELERY_RESULT_BACKEND = 'django-db'
+
+# Add 'webapp.jobs.apps.JobsConfig' to INSTALLED_APPS
+# Run python manage.py makemigrations jobs and python manage.py migrate
+# Remember to run makemigrations and migrate for the jobs app.
+# Remember to run makemigrations and migrate for the jobs app.
+# Remember to run makemigrations and migrate for the jobs app.
+# Remember to run makemigrations and migrate for the jobs app.
+# Remember makemigrations and migrate for jobs app.
+# Remember makemigrations and migrate for jobs app.
